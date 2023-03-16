@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML !DOCTYPE declaration</title>
+	<link rel="stylesheet" href="accordion.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+	<style>
+	.review-input {
+      width: 100%;
+      resize: none;
+      border: none;
+      margin-bottom: 8px;
+      @include body1($gray-800);
+    }
+	.review-input:placeholder {
+      @include body1(#c7c7c7);
+	}
+    .review-input-wrap {
+      width: 100%;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      padding: 8px 16px;
+    }
+    .review-input-button{
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+}
+
+    .divider{border: 1px solid #eaeaea;}
+	.input-button{gap: 10px;}
+  .input-button-ghost, .input-button-cta{@include btn-sm; margin-top: 8px;}
+  
+}	
+	</style>
+</head>
+<body>
+    <div class="review-input-wrap">
+            <textarea class="review-input" name="textarea" placeholder="서평을 입력해주세요."
+              oninput='this.style.height = ""; this.style.height = this.scrollHeight + "px"'></textarea>
+            <div class="divider divider-shadow"></div>
+            <div class="review-input-button input-button ">
+              <button class="input-button-ghost">취소</button>
+              <button class="input-button-cta">등록</button>
+            </div>
+          </div>
+
+</body>
+<script>
+	const reviewInput = document.querySelector(".review-input");
+	const inputButton = document.querySelector(".input-button");
+	inputButton.disabled=true;
+	reviewInput.addEventListener("change", stateHandler);
+	
+	function stateHandler() {
+		if(document.querySelector(".review-input").value === ""){
+			inputButton.disabled = true;
+		}else{
+			inputButton.disabled = false;
+		}
+	}
+</script>
+</html>

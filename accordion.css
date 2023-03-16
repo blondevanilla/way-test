@@ -1,0 +1,19 @@
+.unfold {
+/*	height: 0px;*/
+/*	overflow: hidden;*/
+	display: none;
+}
+
+.unfold-cell{
+	margin-bottom: -15px;
+}
+
+#all-close{
+	margin: 10px 0;
+	padding: 6px 16px;
+	border: none;
+}
+
+#all-close:hover {
+	background-color: #ddd;
+}
